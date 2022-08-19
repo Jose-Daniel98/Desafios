@@ -1,2 +1,2 @@
-# Desafios
+# Desafíos
 Github para los desafíos
