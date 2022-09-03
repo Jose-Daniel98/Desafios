@@ -1,62 +1,170 @@
-//Desafío Complementario
-//Desafío: Incorporar Arrays
+function solicitarDatos() {
+    alert("Bienvenido a Floristería Turrialba. ¡Es un gusto atenderle!")
+    let nombre = prompt("Ingrese su nombre");
+    while(nombre === "")
+    nombre = prompt("Ingrese su nombre");
+    let apellido = prompt("ingrese su apellido");
+    while(apellido === "")
+    apellido = prompt("ingrese su apellido");
+    alert("Hola " + nombre + " " + apellido + "!");
+}
 
-// 1- Solicitar al usuario 6 (seis) números y muestre el valor mayor y menor.
-// 2- Usando el ejercicio #1 (uno) | Igual que el ejercicio anterior pero que solicite números hasta que el usuario indique "fin".
+solicitarDatos();
 
-
-// 1- Solicitar al usuario 6 (seis) números y muestre el valor mayor y menor.
-// window.onload = function () {
-    // console.log("Hola");
-    let mayor = 0;
-    let menor = 99999;
-    let numeros = [];
-    //For para capturar los datos e ingresar al array
-    for (let index = 0; index < 6; index++) {
-        numeros[index] = parseInt(prompt("Ingrese un número y te digo cual es el mayor y el menor de los seis"));
+function flores (nombre, precio) {
+    this.name = nombre;
+    this.price = precio;
+    this.agregarPedido = () => {
+        Pedido.push(this.name);
+        total = this.price + total;
     }
-    //Se recorre el array y se comprueba cual es el número mayor y el número menor dentro del array
-    for (let index = 0; index < numeros.length; index++) {
-        if (numeros[index] > mayor) {
-            mayor = numeros[index];
+}
+
+const flor1 = new flores ("Lirio", 6500)
+const flor2 = new flores ("Rosa", 7500)
+const flor3 = new flores ("Tulipan", 15000)
+const flor4 = new flores ("Begonia", 4000)
+const flor5 = new flores ("Hortensia", 4500)
+const flor6 = new flores ("Orquidea", 20000)
+
+let total = 0;
+const Pedido = []
+let reservar = true;
+
+while (reservar) {
+    let producto = prompt("¿Qué flor desea llevar?\nLirio\nRosa\nTulipan\nBegonia\nHortensia\nOrquidea\nPara cerrar su pedido escriba'Finalizar pedido'.")
+    
+    if (producto === "Lirio") {
+            flor1.agregarPedido();
+            console.log(Pedido);
         }
-        if(numeros[index] < menor){
-            menor = numeros[index];
+
+            else if (producto === "Rosa") {
+                flor2.agregarPedido();
+                console.log(Pedido);
+                }
+
+            else if (producto === "Tulipan") {
+                flor3.agregarPedido();
+                console.log(Pedido);
+                }
+
+            else if (producto === "Begonia") {
+                flor4.agregarPedido();
+                console.log(Pedido);
+                }
+        
+            else if (producto === "Hortensia") {
+                flor5.agregarPedido();
+                console.log(Pedido);
+                }
+
+            else if (producto === "Orquidea") {
+                flor6.agregarPedido();
+                console.log(Pedido);
+                }
+
+            else if (producto === "Finalizar pedido") {
+                reservar = false;
+                console.log("Las flores seleccionadas en su pedido son:\n"+Pedido.join("\n")+".\nEl precio total de su pedido es ₡"+total);
+            }
+
+            else {
+                alert("No seleccionaste ninguna flor");
+            }
         }
-    }
-    console.log("La comprobación ha finalizado.");
-    console.log("El número mayor es " + mayor);
-    console.log("El número menor es " + menor);
-// }
+
+flores();
+
+flores= [];
+flores.push(flor1,flor2,flor3,flor4,flor5,flor6)
+
+let encontrado= flores.find(el=>{
+    return el.name === "Rosa";
+})
+
+console.log(encontrado);
+
+let precioMayor= flores.filter(el=>{
+    return el.price > 10000;
+})
+
+console.log(precioMayor)
 
 
-// 2- Usando el ejercicio #1 (uno) | Igual que el ejercicio anterior pero que solicite números hasta que el usuario indique "fin".
 
-let mayor1 = 0;
-    let menor1 = 99999;
-    let numeros1 = [];
-    let usuario = "";
-    do {
-        usuario = prompt("Ingresa un número o escribe 'fin' para terminar");
-        if(usuario != "fin"){
-            usuario = parseInt(usuario);
-            numeros1.push(usuario);
-        }
-    } while (usuario != "fin");
 
-    //Se recorre el array y se comprueba cual es el número mayor y el número menor dentro del array
-    for (let index = 0; index < numeros1.length; index++) {
-        if (numeros1[index] > mayor1) {
-            mayor1 = numeros1[index];
-        }
-        if(numeros1[index] < menor1){
-            menor1 = numeros1[index];
-        }
-    }
-    if(numeros1.length > 2){
-        console.log("La comprobación ha finalizado.");
-        console.log("El número mayor es " + mayor1);
-        console.log("El número menor es " + menor1);
-    }else{
-        console.log("Números insuficientes para realizar la comprobación de números mayores y menores.");
-    }
+console.log("--------Ejercicio Extra--------");
+console.log("--------Agrupa a los alumnos en las diferentes secciones--------");
+// Ejercicio Extra 
+// Agrupa a los alumnos en las diferentes secciones
+const alumnos = [
+    {
+        nombre: "José",
+        apellido: "Parra",
+        edad: 19,
+        seccion: "A"
+    },
+    {
+        nombre: "Daniel",
+        apellido: "Zúñiga",
+        edad: 19,
+        seccion: "B"
+    },
+    {
+        nombre: "Johan",
+        apellido: "Riverol",
+        edad: 20,
+        seccion: "A"
+    },
+    {
+        nombre: "Jonathan",
+        apellido: "Vives",
+        edad: 21,
+        seccion: "C"
+    },
+    {
+        nombre: "Martin",
+        apellido: "Centurión",
+        edad: 18,
+        seccion: "C"
+    },
+    {
+        nombre: "Diego",
+        apellido: "Lopez",
+        edad: 20,
+        seccion: "F"
+    },
+    {
+        nombre: "Alfredo",
+        apellido: "Venegas",
+        edad: 21,
+        seccion: "B"
+    },
+    {
+        nombre: "Alfonso",
+        apellido: "Romero",
+        edad: 18,
+        seccion: "A"
+    },
+    {
+        nombre: "Antonio",
+        apellido: "Torres",
+        edad: 23,
+        seccion: "C"
+    },
+    {
+        nombre: "Dwayne",
+        apellido: "Johnson",
+        edad: 21,
+        seccion: "A"
+    },
+]
+
+let grupos = {};
+alumnos.forEach(alumno => {
+    const nombreGrupo = alumno.seccion;
+    if(!grupos[nombreGrupo]) grupos[nombreGrupo] = [];
+    grupos[nombreGrupo].push(alumno);
+});
+console.log("Grupos", grupos);
