@@ -2,14 +2,14 @@
 
 * {
     font-family: 'Helvetica', sans-serif;
+    list-style: none;
 }
 
 span {
     font-family: 'Anton', sans-serif;
-    
     letter-spacing: 5px;
     background-color: #B5B2B2;
-    padding: 0  0.4rem;
+    padding: 0 0.4rem;
     font-style: italic;
 }
 
