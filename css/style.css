@@ -12,3 +12,10 @@ span {
     padding: 0  0.4rem;
     font-style: italic;
 }
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
