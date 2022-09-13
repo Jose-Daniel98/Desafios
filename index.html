@@ -4,23 +4,60 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./img/desafio.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <title>Desafío Complementario | DOM</title>
+    <link rel="shortcut icon" href="./img/desafioentregable.png" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+    <title>Desafío Entregable | Eventos</title>
   </head>
-  <body>
-    <h1><span>Desafío Complementario</span></h1>
-    <hr />
-    <h2 id="h2">DOM</h2>
-
-
-  <div id="contenedor">
-    <p class="parrafo">Me llamo "JAVASCRIPT"</p>
-    <p class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat soluta voluptas natus ducimus perferendis esse aperiam consequatur velit, dolore delectus fuga veniam sequi earum tempore modi dolores ratione, itaque voluptatibus.</p>
-    <p class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus consequatur dolorem ut aliquam voluptatem at exercitationem ipsa sequi laudantium enim, minus eaque tempore earum cumque laboriosam odit ad aperiam dignissimos.</p>
-  </div>
-
-<ul id="lista" ></ul>
+  <body style="color: white; background-color: #1d2630;">
+    
+    <div class="container mt-5">
+      <div class="text-center">
+        <h1 class="display-5 mb-5"><strong>CRUD Application</strong></h1>
+      </div>
+      <div class="main row justify-content-center">
+        <form action="" id="student-form" class="row justify-content-center mb-4" autocomplete="off">
+          <div class="col-10 col-md-8 mb-3">
+            <label for="firstName">Nombre del Producto</label>
+            <input class="form-control" id="firstName" type="text" placeholder="Ingrese el nombre del producto">
+          </div>
+          <div class="col-10 col-md-8 mb-3">
+            <label for="lastName">Propósito del Producto</label>
+            <input class="form-control" id="lastName" type="text" placeholder="Ingrese el propósito del producto">
+          </div>
+          <div class="col-10 col-md-8 mb-3">
+            <label for="rollNo">Cantidad del Producto</label>
+            <input class="form-control" id="rollNo" type="text" placeholder="Ingrese la cantidad del producto">
+          </div>
+          <div class="col-10 col-md-8">
+            <input class="btn btn-success add-btn" type="submit" value="Submit">
+          </div>
+        </form>
+        <div class="col-12 md-10 mt-5">
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th>Nombre del Producto</th>
+                <th>Propósito</th>
+                <th>Cantidad</th>
+                <th>Accciones</th>
+              </tr>
+            </thead>
+            <tbody id="student-list">
+              <tr>
+                <td>Lirio</td>
+                <td>Flor para arreglos</td>
+                <td>25</td>
+                <td>
+                  <a href="#" class="btn btn-warning btn-sm edit">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm delete">Delete</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
 <script src="./js/main.js"></script>
   </body>
